@@ -6,7 +6,7 @@ class Actividad(models.Model):
     fecha = models.DateField()
     hora_inicio = models.TimeField()
     hora_fin = models.TimeField()
-    profesor = models.CharField(max_length=200)
+    profesor = models.CharField(max_length=100)
     aula = models.CharField(max_length=100)
 
     def __str__(self):

@@ -1,32 +1,110 @@
+/* Estilo por defecto (modo claro) */
 body {
-    background-color: #f8f9fa;
+    background-color: #f8f9fa; /* Fondo claro */
+    color: #000; /* Texto oscuro */
 }
 
-h1 {
-    font-size: 2.5rem;
-    font-weight: 600;
-    color: #343a40;
+.navbar {
+    background-color: #343a40; /* Fondo oscuro para la barra de navegación */
 }
 
-.table th, .table td {
-    vertical-align: middle;
-    text-align: center;
+.navbar-brand, .nav-link {
+    color: white; /* Texto blanco en la barra de navegación */
 }
 
-.table th {
-    background-color: #007bff;
+/* Estilo de los botones y otros elementos */
+button, .btn {
+    background-color: #007bff; /* Color de fondo de los botones */
+    color: white; /* Texto blanco */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover, .btn:hover {
+    background-color: #0056b3; /* Cambio de color al pasar el mouse */
+}
+
+/* Botón específico para "Agregar Actividad" */
+.btn-agregar {
+    background-color: #28a745; /* Verde para agregar */
+}
+
+.btn-agregar:hover {
+    background-color: #218838; /* Cambio a un verde más oscuro al pasar el mouse */
+}
+
+/* Modo oscuro */
+body.dark-mode {
+    background-color: #121212; /* Fondo oscuro */
+    color: #f8f9fa; /* Texto claro */
+}
+
+body.dark-mode .navbar {
+    background-color: #212121; /* Fondo oscuro para la barra de navegación */
+}
+
+body.dark-mode .navbar-brand, body.dark-mode .nav-link {
+    color: #f8f9fa; /* Texto claro en la barra de navegación */
+}
+
+body.dark-mode button, body.dark-mode .btn {
+    background-color: #007bff; /* Botones con el mismo color en modo oscuro */
     color: white;
 }
 
-.table-striped tbody tr:nth-of-type(odd) {
+body.dark-mode button:hover, body.dark-mode .btn:hover {
+    background-color: #0056b3; /* Cambio de color al pasar el mouse */
+}
+
+/* Estilos para el botón "Agregar Actividad" en modo oscuro */
+body.dark-mode .btn-agregar {
+    background-color: #28a745; /* Verde para agregar */
+}
+
+body.dark-mode .btn-agregar:hover {
+    background-color: #218838; /* Cambio a un verde más oscuro al pasar el mouse */
+}
+
+/* Estilos para el header */
+header {
+    padding: 20px;
     background-color: #f1f1f1;
+    text-align: center;
 }
 
-.btn-sm {
-    font-size: 0.875rem;
+header h1 {
+    font-size: 2rem;
+    color: #333;
 }
 
-.btn-danger, .btn-warning, .btn-primary, .btn-success {
-    font-size: 1rem;
-    font-weight: bold;
+/* Modo oscuro para el header */
+body.dark-mode header {
+    background-color: #222;
+}
+
+body.dark-mode header h1 {
+    color: #f8f9fa;
+}
+
+/* Estilos para el pie de página */
+footer {
+    padding: 20px;
+    background-color: #f1f1f1;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    color: #333;
+}
+
+/* Modo oscuro para el footer */
+body.dark-mode footer {
+    background-color: #222;
+}
+
+body.dark-mode footer p {
+    color: #f8f9fa;
 }

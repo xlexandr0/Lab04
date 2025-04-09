@@ -1,58 +1,35 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Actividad</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-</head>
-<body>
-    <div class="container my-5">
-        <h1 class="text-center mb-4">Editar Actividad</h1>
+{% extends 'base_generic.html' %}
 
-        <form method="post">
-            {% csrf_token %}
-            <div class="form-group">
-                <label for="id_nombre">Nombre</label>
-                {{ form.nombre|add_class:"form-control" }}
-            </div>
-            <div class="form-group">
-                <label for="id_descripcion">Descripción</label>
-                {{ form.descripcion|add_class:"form-control" }}
-            </div>
-            <div class="form-group">
-                <label for="id_fecha">Fecha</label>
-                {{ form.fecha|add_class:"form-control" }}
-            </div>
-            <div class="form-group">
-                <label for="id_hora_inicio">Hora de Inicio</label>
-                {{ form.hora_inicio|add_class:"form-control" }}
-            </div>
-            <div class="form-group">
-                <label for="id_hora_fin">Hora de Fin</label>
-                {{ form.hora_fin|add_class:"form-control" }}
-            </div>
-            <div class="form-group">
-                <label for="id_profesor">Profesor</label>
-                {{ form.profesor|add_class:"form-control" }}
-            </div>
-            <div class="form-group">
-                <label for="id_aula">Aula</label>
-                {{ form.aula|add_class:"form-control" }}
-            </div>
-            <div class="text-center">
-                <button type="submit" class="btn btn-primary">Actualizar Actividad</button>
-            </div>
-        </form>
-
-        <div class="mt-3 text-center">
-            <a href="{% url 'lista_actividades' %}" class="btn btn-secondary">Volver a la lista</a>
+{% block content %}
+<div class="container">
+    <h1>Editar Actividad</h1>
+    <form method="POST" class="card p-4">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="nombre">Nombre de la Actividad</label>
+            <input type="text" name="nombre" class="form-control" id="nombre" value="{{ actividad.nombre }}">
         </div>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
+        <div class="form-group">
+            <label for="descripcion">Descripción</label>
+            <textarea name="descripcion" class="form-control" id="descripcion">{{ actividad.descripcion }}</textarea>
+        </div>
+        <div class="form-group">
+            <label for="fecha">Fecha</label>
+            <input type="date" name="fecha" class="form-control" id="fecha" value="{{ actividad.fecha }}">
+        </div>
+        <div class="form-group">
+            <label for="hora_inicio">Hora de Inicio</label>
+            <input type="time" name="hora_inicio" class="form-control" id="hora_inicio" value="{{ actividad.hora_inicio }}">
+        </div>
+        <div class="form-group">
+            <label for="hora_fin">Hora de Fin</label>
+            <input type="time" name="hora_fin" class="form-control" id="hora_fin" value="{{ actividad.hora_fin }}">
+        </div>
+        <div class="form-group">
+            <label for="aula">Aula</label>
+            <input type="text" name="aula" class="form-control" id="aula" value="{{ actividad.aula }}">
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+</div>
+{% endblock %}

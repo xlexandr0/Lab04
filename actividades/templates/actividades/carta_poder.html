@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Carta de Poder</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+        h1 {
+            text-align: center;
+            font-size: 24px;
+        }
+        .content {
+            margin-top: 30px;
+        }
+        .content p {
+            font-size: 18px;
+        }
+        .signature {
+            margin-top: 50px;
+            margin-left: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Carta de Poder</h1>
+    <div class="content">
+        <p><strong>Actividad:</strong> {{ nombre_actividad }}</p>
+        <p><strong>Descripción:</strong> {{ descripcion }}</p>
+        <p><strong>Fecha:</strong> {{ fecha }}</p>
+        <p><strong>Hora de inicio:</strong> {{ hora_inicio }}</p>
+        <p><strong>Hora de fin:</strong> {{ hora_fin }}</p>
+        <p><strong>Aula:</strong> {{ aula }}</p>
+    </div>
+    <div class="signature">
+        <p>Firma del Responsable: _________________________</p>
+    </div>
+</body>
+</html>
