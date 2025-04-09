@@ -13,9 +13,12 @@
                 Fecha: {{ actividad.fecha }}<br>
                 Hora: {{ actividad.hora_inicio }} - {{ actividad.hora_fin }}<br>
                 Profesor: {{ actividad.profesor }}<br>
-                Aula: {{ actividad.aula }}
+                Aula: {{ actividad.aula }}<br>
+                <a href="{% url 'editar_actividad' actividad.pk %}">Editar</a> |
+                <a href="{% url 'eliminar_actividad' actividad.pk %}" onclick="return confirm('¿Estás seguro de eliminar esta actividad?')">Eliminar</a>
             </li>
         {% endfor %}
     </ul>
+    
 </body>
 </html>
