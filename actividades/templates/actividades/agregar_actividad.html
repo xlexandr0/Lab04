@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Agregar Actividad</title>
+</head>
+<body>
+    <h1>Agregar Nueva Actividad</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar Actividad</button>
+    </form>
+    <a href="{% url 'lista_actividades' %}">Volver a la lista de actividades</a>
+</body>
+</html>
