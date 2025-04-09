@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Actividades</title>
+</head>
+<body>
+    <h1>Lista de Actividades</h1>
+    <ul>
+        {% for actividad in actividades %}
+            <li>
+                <strong>{{ actividad.nombre }}</strong><br>
+                {{ actividad.descripcion }}<br>
+                Fecha: {{ actividad.fecha }}<br>
+                Hora: {{ actividad.hora_inicio }} - {{ actividad.hora_fin }}<br>
+                Profesor: {{ actividad.profesor }}<br>
+                Aula: {{ actividad.aula }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
